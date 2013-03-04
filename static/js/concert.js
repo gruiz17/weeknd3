@@ -8,6 +8,8 @@ var w=window.innerWidth,
 
 
 var svg = d3.select("body").append("svg:svg")
+    .attr("width",w)
+    .attr("height",h)
     .style("pointer-events", "all")
     .on("mousemove", twins)
     .on("mousedown",implosion);
