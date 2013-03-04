@@ -1,7 +1,11 @@
-# Django settings for weeknd3 project.
+#Django settings for weeknd3 project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname('weeknd3'))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -9,16 +13,19 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DATABASES = {}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'database.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -67,6 +74,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, "static/"),
 )
 
 # List of finder classes that know how to find static files in
@@ -78,7 +86,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'z8_!%az&amp;l7=ured^dbb^r!jxp8vs9*rch0!a-=!^0j^0!a^0lu'
+SECRET_KEY = '_cbwg$x*)-%442tw3a=%+ccg*l2o$9f$ies0&amp;k4b%is9ailsj+'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -106,6 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT,"templates/"),
 )
 
 INSTALLED_APPS = (
@@ -119,6 +128,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'visuals',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -149,3 +159,4 @@ LOGGING = {
         },
     }
 }
+
