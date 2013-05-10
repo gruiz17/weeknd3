@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Echoes.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flashy visual effects and The Weeknd.">
+    <meta name="author" content="">
+    <script type="text/javascript" src="js/d3.v3.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38880263-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+    $("#jquery_jplayer_1").jPlayer({
+        ready: function(event) {
+            $(this).jPlayer("setMedia", {
+                mp3: "https://s3-us-west-1.amazonaws.com/musicgabe/09+Echoes+Of+Silence.mp3",
+            });
+        },
+        swfPath: "js",
+        supplied: "mp3"
+      });
+    });
+
+    </script>
+    <style type="text/css">
+
+body {
+  background: #373737;
+}
+
+circle {
+  fill: none;
+  stroke-width: 5px;
+}
+
+rect {
+  fill:none;
+  stroke-width:10px;
+}
+
+.greenchange:hover {
+  color:#74c476;
+}
+
+.purplechange:hover {
+  color:#9e9ac8;
+}
+
+.bluechange:hover {
+  color:#8ACFF6;
+}
+
+.greenshit {
+  font-weight:200;
+  font-size:20px;
+}
+
+.purpleshit{
+  font-weight:200;
+  font-size:20px;
+}
+
+.swagshit {
+  font-weight:200;
+  font-size:20px;
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <div id="jquery_jplayer_1"></div>
+    <div id="jp_container_1" class="row" style="padding-top:10px; padding-left:25px">
+
+
+        <span style="text-align:left;font-weight:200;font-size:30px;">Weekn</span><span style="font-weight:200;font-size:30px;color:#8ACFF6;">d3</span><span style="font-weight:200;font-size:30px;"> | <span class="greenshit"><span style="color:#74c476">Concert:</span> <a href="#" onclick="clearAll(refreshInterval);setIntervals();" class="greenchange jp-play">Circles</a> <span style="color:#74c476">|</span> <a class="greenchange jp-play" href="#" onclick="clearAll(refreshInterval);setIntervalSquare();">Squares</a> <span style="color:#74c476">|</span> <a class="greenchange jp-play" href="#" onclick="clearAll(refreshInterval);setIntervalFirework();">Fireworks</a> <span style="color:#74c476">|</span> <a class="greenchange jp-play" href="#" onclick="clearAll(refreshInterval);">Clear</a> <span style="color:#74c476">|</span> <a onclick="clearAll(refreshInterval);" class="greenchange jp-stop" href="#">Stop</a></span>
+
+        <span style="font-weight:200;font-size:30px;"> | </span><span class="purpleshit"><span style="color:#9e9ac8">Click:</span> <a class="purplechange" href="#" onclick="setClickImplosion();">Implode</a> <span style="color:#9e9ac8">|</span> <a class="purplechange" href="#" onclick="setClickChaos();">Chaos</a> <span style="color:#9e9ac8"></span>
+
+        <span style="font-weight:200;font-size:30px;"> | </span><span class="greenshit"><span style="color:#74c476">Move:</span> <a class="greenchange" href="#" onclick="setTwinsMove();">Twins</a> <span style="color:#74c476">|</span> <a class="greenchange">(Adding more later)</a></span>
+
+        <span style="font-weight:200;font-size:30px;"> | </span><span class="purpleshit"><span style="color:#8ACFF6;">Misc:</span> <a class="bluechange" href="http://github.com/gruiz17/weeknd3">Source</a> </span>
+
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="js/concert.js"></script>
+
+
+  <div class="row">
+    <div class="span12" style="padding-left:4px">
+    <h2 style="font-weight:200; color:#8ACFF6;">Disclaimer</h2>
+    <p>This site is a little more serious in tone than my other apps/sites, like <a style="color:#8ACFF6;" href="http://profanely.herokuapp.com/">this one</a>. It may also not be the best idea to visit this site while drunk and/or high. Legal stuff: Song is "Echoes of Silence" by The Weeknd. I do not own any of The Weeknd's music. However, I do enjoy his music and think it is quite legit. Go check him out!</p>
+    <h2 style="font-weight:200; color:#8ACFF6;">Who are you?</h2>
+    <p>I am Gabriel Ruiz. A college student/web developer/master quesadilla and microwave chef.</p>
+    <h2 style="font-weight:200; color:#8ACFF6;">Why did you make this site?</h2>
+    <p>Long story short, personal redemption - to prove to myself that I'm not a scrub at web development, and specifically with the d3.js library. Also because The Weeknd's awesome.</p>
+    <h2 style="font-weight:200; color:#8ACFF6;">Why should I stay?</h2>
+    <p>I may or may not give you free food if you stay.</p>
+    <h2 style="font-weight:200; color:#8ACFF6">How did you make this?</h2>
+    <p>Python/Django/Heroku for deployment (mainly because I might add more onto this later). To play music, I used the jPlayer plugin. I used d3.js for all the fancy visual effects. Everything else is just HTML/CSS.</p>
+    <p><a href="#top" style="color:#8ACFF6;">Back to top</a></p>
+  </div>
+  </div>
+  </body>
+</html>
